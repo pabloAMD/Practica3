@@ -172,7 +172,6 @@ function validaCedula() {
     console.log(cedula.length)
     //Preguntamos si la cedula consta de 10 digitos
     if (cedula.length == 10) {
-
         //Obtenemos el digito de la region que sonlos dos primeros digitos
         var digito_region = cedula.substring(0, 2);
 
@@ -183,7 +182,8 @@ function validaCedula() {
             var ultimo_digito = cedula.substring(9, 10);
 
             //Agrupo todos los pares y los sumo
-            var pares = parseInt(cedula.substring(1, 2)) + parseInt(cedula.substring(3, 4)) + parseInt(cedula.substring(5, 6)) + parseInt(cedula.substring(7, 8));
+            var pares = parseInt(cedula.substring(1, 2)) + parseInt(cedula.substring(3, 4)) +
+                parseInt(cedula.substring(5, 6)) + parseInt(cedula.substring(7, 8));
 
             //Agrupo los impares, los multiplico por un factor de 2, si la resultante es > que 9 le restamos el 9 a la resultante
             var numero1 = cedula.substring(0, 1);
@@ -317,12 +317,8 @@ function val_contras(dato, dato1) {
     } else {
         return false;
     }
-
-
-
-
-
 }
+
 function validaLongitud(dato) {
     if (dato.length != 10) {
         return false;
@@ -332,16 +328,16 @@ function validaLongitud(dato) {
 }
 
 function val_fecha(dato) {
-    dato= document.getElementById('fechanac').value.split('/');
+    dato = document.getElementById('fechanac').value.split('/');
     console.log(dato[0])
     var fecha1 = new Date(dato[2], dato[1], dato[0]);
-    console.log(fecha1.getDate(),fecha1.getMonth(),fecha1.getFullYear());
-    if (dato.length == 3 && dato[0] == fecha1.getDate() 
-        && dato[1]== fecha1.getMonth() 
+    console.log(fecha1.getDate(), fecha1.getMonth(), fecha1.getFullYear());
+    if (dato.length == 3 && dato[0] == fecha1.getDate()
+        && dato[1] == fecha1.getMonth()
         && dato[2] == fecha1.getFullYear()) {
         return true;
     } else {
-       
+
         return false; //Inválida
     }
 }

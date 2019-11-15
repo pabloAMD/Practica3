@@ -15,9 +15,6 @@ var galeria = [imagen1, imagen2, imagen3, imagen4, imagen5, imagen6, imagen7, im
 var aleatorios = new Array(5);
 var numeroImagen = 0;
 
-
-
-
 function empezar() {
     numeroImagen = 0;
     aleatoriosR(galeria)
